@@ -5,6 +5,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: yellow;
+    font-family: 'Lobster', cursive;
 }
 
 .button-container {
@@ -23,7 +24,7 @@ body {
 }
 
 .btn:hover {
-    background-color: grey;
+    background-color: lightgrey;
 }
 
 .grid-container {

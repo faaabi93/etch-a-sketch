@@ -12,6 +12,8 @@ window.addEventListener("load", createDefaultGrid(16));
 clearbtn.addEventListener("click", clearAll);
 
 rainbowbtn.addEventListener("click", ()  => {
+    rainbowbtn.style.backgroundColor = "lightgrey";
+    blackbtn.style.backgroundColor = "white";
     clearAll();
     const gridItems = gridContainer.querySelectorAll("div");
     gridItems.forEach(gridItem => gridItem.removeEventListener("mouseover", blackColor));
@@ -19,6 +21,8 @@ rainbowbtn.addEventListener("click", ()  => {
 });
 
 blackbtn.addEventListener("click", () => {
+    rainbowbtn.style.backgroundColor = "white";
+    blackbtn.style.backgroundColor = "lightgrey";
     clearAll()
     const gridItems = gridContainer.querySelectorAll("div");
     gridItems.forEach(gridItem => gridItem.removeEventListener("mouseover", rainbowColor));
@@ -39,6 +43,7 @@ sizebtn.addEventListener("click", () => {
 });
 
 function createDefaultGrid() {
+    blackbtn.style.backgroundColor = "lightgrey";
     setSize(16);
     createDivs(16);
 };
