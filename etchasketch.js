@@ -27,7 +27,7 @@ blackbtn.addEventListener("click", () => {
     const gridItems = gridContainer.querySelectorAll("div");
     gridItems.forEach(gridItem => gridItem.removeEventListener("mouseover", rainbowColor));
     gridItems.forEach(gridItem => gridItem.addEventListener("mouseover", blackColor));
-})
+});
 
 sizebtn.addEventListener("click", () => {
     let newSize = prompt("Enter new size between 5 and 64");
@@ -60,31 +60,37 @@ function createDivs(size) {
         gridContainer.appendChild(gridElement);
     }
     const gridItems = gridContainer.querySelectorAll("div");
-    gridItems.forEach(gridItem => gridItem.addEventListener("mouseover", blackColor))
+    gridItems.forEach(gridItem => gridItem.addEventListener("mouseover", blackColor));
 };
 
 function rainbowColor(e) {
     const randomR = Math.floor(Math.random() * 256);
     const randomG = Math.floor(Math.random() * 256);
     const randomB = Math.floor(Math.random() * 256);
-    e.target.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})`;
-}
+    if (e.target.style.backgroundColor === "white") {
+        e.target.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})`;
+    };
+};
 
 function blackColor(e) {
     e.target.style.backgroundColor = "#000000";
-}
+};
+
+function blackColor(e) {
+    e.target.style.backgroundColor = "#000000";
+};
 
 function removeGridElements() {
     const gridArray = Array.from(gridContainer.childNodes);
     gridArray.forEach((item) => {
         gridContainer.removeChild(item);
-    })
-}
+    });
+};
 
 function clearAll() {
     const gridItems = gridContainer.querySelectorAll("div");
     gridItems.forEach((gridItem) => gridItem.style.backgroundColor = "white");
-}
+};
 
 
 
